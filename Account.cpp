@@ -84,17 +84,22 @@ int Account::getBalance(std::string p) {
 }
 
 bool Account::transaction(int a, std::string p) {
-	if(p == pin){
+	if(p == pin && account_balance - a > 0){
 		account_balance += a;
 		return true;
 	}
 	else {
-		return -1;
+		return false;
 	}
 } 
 
+/*
 int main() {
 	Account a1 = {"Anna", "McDog", "2134"};
+	std::cout << a1.getBalance("1234") << std::endl;
+	std::cout << a1.transaction(-10000, "1234") << std::endl;
+	std::cout << a1.transaction(-500, "2134") << std::endl;
+	
 	Account a2;
 	a2.setFirstName("Jermeny");
 	a2.setLastName("Wolfrich");
@@ -104,6 +109,8 @@ int main() {
 	std::cout << a2.getAccountNumber() << std::endl;
 	std::cout << a2.getPin() << std::endl;
 	std::cout << a2.getBalance("1111") << std::endl;
+	std::cout << a2.transaction(70, "1111") << std::endl;
+	std::cout << a2.getBalance("1111") << std::endl;
 	
 	return 0;
-}
+}*/
