@@ -1,3 +1,11 @@
+/*
+Author: Anita Prova
+Course: CSCI-135
+Instructor: Genady Maryash
+Assignment: Project 3
+Created Account and Bank class with its respective functions.
+*/
+
 #include <string>
 
 class Account {
@@ -11,8 +19,8 @@ public:
 	std::string getLastName();
 	std::string getAccountNumber();
 	std::string getPin();
-	int getBalance();
-	bool transaction();
+	int getBalance(std::string p);
+	bool transaction(int a, std::string p);
 private:
 	std::string first_name;
 	std::string last_name;

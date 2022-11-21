@@ -37,6 +37,7 @@ Account::Account(std::string fname, std::string lname, std::string p) {
 		pin = "0000";
 	}
 	account_number = generateAccountNumber();	
+	account_balance = 0;
 }
 
 void Account::setFirstName(std::string n) {
@@ -61,10 +62,48 @@ std::string Account::getFirstName() {
 	return first_name;
 }
 
+std::string Account::getLastName() {
+	return last_name;
+}
+
+std::string Account::getAccountNumber() {
+	return account_number;
+}
+
+std::string Account::getPin() {
+	return pin;
+}
+
+int Account::getBalance(std::string p) {
+	if(pin == p) {
+		return account_balance;
+	}
+	else{
+		return -1;
+	}
+}
+
+bool Account::transaction(int a, std::string p) {
+	if(p == pin){
+		account_balance += a;
+		return true;
+	}
+	else {
+		return -1;
+	}
+} 
+
 int main() {
 	Account a1 = {"Anna", "McDog", "2134"};
-	
-	
+	Account a2;
+	a2.setFirstName("Jermeny");
+	a2.setLastName("Wolfrich");
+	a2.setPin("1111");
+	std::cout << a2.getFirstName() << std::endl;
+	std::cout << a2.getLastName() << std::endl;
+	std::cout << a2.getAccountNumber() << std::endl;
+	std::cout << a2.getPin() << std::endl;
+	std::cout << a2.getBalance("1111") << std::endl;
 	
 	return 0;
 }
