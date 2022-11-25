@@ -11,7 +11,7 @@ Created Account and Bank class with its respective functions.
 #include "Bank.hpp"
 
 int main() {
-	Account a1 = {"Anna", "McDog", "2134"};
+	/*Account a1 = {"Anna", "McDog", "2134"};
 	std::cout << a1.getBalance("1234") << std::endl;
 	std::cout << a1.transaction(-10000, "1234") << std::endl;
 	std::cout << a1.transaction(-500, "2134") << std::endl;
@@ -27,6 +27,7 @@ int main() {
 	std::cout << a2.getBalance("1111") << std::endl;
 	std::cout << a2.transaction(70, "1111") << std::endl;
 	std::cout << a2.getBalance("1111") << std::endl;
+	*/
 
 	return 0;
 }
