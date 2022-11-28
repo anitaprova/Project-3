@@ -14,7 +14,7 @@ int main() {
 	//TASK A
 	std::cout << "~~~~~~TASK A~~~~~~~" << std::endl;
 	Account a1 = {"Anna", "McDog", "2134"};
-	std::cout << a1.getBalance("1234") << std::endl;
+	std::cout << a1.getBalance() << std::endl;
 	std::cout << a1.transaction(-10000) << std::endl;
 	std::cout << a1.transaction(-500) << std::endl;
 	
@@ -26,10 +26,13 @@ int main() {
 	std::cout << a2.getLastName() << std::endl;
 	std::cout << a2.getAccountNumber() << std::endl;
 	std::cout << a2.getPin() << std::endl;
-	std::cout << a2.getBalance("1111") << std::endl;
+	std::cout << a2.getBalance() << std::endl;
 	std::cout << a2.transaction(770) << std::endl;
-	std::cout << a2.getBalance("1111") << std::endl;
-
+	std::cout << a2.getBalance() << std::endl;
+	
+	Account a3 = {"Anita", "Prova", "1234"};
+	std::cout << a3.getFirstName() << a3.getLastName() << " " << a3.getAccountNumber() << " " << a3.getPin() << " " << a3.getBalance();
+	
 	//TASK B
 	/*std::cout << "~~~~~~~~~~~~TASK B~~~~~~~~~~~~~~" << std::endl;	
 	Bank b;

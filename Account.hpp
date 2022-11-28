@@ -21,7 +21,7 @@ public:
 	std::string getLastName();
 	std::string getAccountNumber();
 	std::string getPin();
-	int getBalance(std::string p);
+	int getBalance();
 	bool transaction(int a);
 private:
 	std::string first_name;

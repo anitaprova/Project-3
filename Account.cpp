@@ -30,7 +30,7 @@ Account::Account() {
 Account::Account(std::string fname, std::string lname, std::string p) {
 	first_name = fname;
 	last_name = lname;
-	if(pin.length() == 4) {
+	if(p.length() == 4) {
 		pin = p;
 	}
 	else {
@@ -74,13 +74,8 @@ std::string Account::getPin() {
 	return pin;
 }
 
-int Account::getBalance(std::string p) {
-	if(pin == p) {
-		return account_balance;
-	}
-	else{
-		return -1;
-	}
+int Account::getBalance() {
+	return account_balance;
 }
 
 bool Account::transaction(int a) {
