@@ -83,8 +83,8 @@ int Account::getBalance(std::string p) {
 	}
 }
 
-bool Account::transaction(int a, std::string p) {
-	if(p == pin && account_balance - a > 0){
+bool Account::transaction(int a) {
+	if(account_balance + a > 0){
 		account_balance += a;
 		return true;
 	}

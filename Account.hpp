@@ -22,7 +22,7 @@ public:
 	std::string getAccountNumber();
 	std::string getPin();
 	int getBalance(std::string p);
-	bool transaction(int a, std::string p);
+	bool transaction(int a);
 private:
 	std::string first_name;
 	std::string last_name;
