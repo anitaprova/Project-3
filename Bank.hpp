@@ -16,9 +16,9 @@ private:
 	int total;
 public:
 	Bank();
-	std::string createAccount(std::string f, std::string l, int p);
-	bool removeAccount(int account);
-	bool withdraw(int amount, int account, int p);
-	bool deposit(int amount, int account, int p);
-	int getAccountBalance(int account, int p);
+	std::string createAccount(std::string f, std::string l, std::string p);
+	bool removeAccount(std::string account);
+	bool withdraw(int amount, std::string account, std::string p);
+	bool deposit(int amount, std::string account, std::string p);
+	int getAccountBalance(std::string account, std::string p);
 };

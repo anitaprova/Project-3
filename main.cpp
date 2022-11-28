@@ -27,7 +27,7 @@ int main() {
 	std::cout << a2.getAccountNumber() << std::endl;
 	std::cout << a2.getPin() << std::endl;
 	std::cout << a2.getBalance("1111") << std::endl;
-	std::cout << a2.transaction(70) << std::endl;
+	std::cout << a2.transaction(770) << std::endl;
 	std::cout << a2.getBalance("1111") << std::endl;
 
 	//TASK B
