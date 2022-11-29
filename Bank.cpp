@@ -27,19 +27,39 @@ std::string Bank::createAccount(std::string f, std::string l, std::string p) {
 }
 
 bool Bank::removeAccount(std::string account) {
-	int index = 0;
+	int index;
 	for (int i = 0; i < 200; i++) {
 		if(accounts[i].getAccountNumber() == account) {
-			index = i;	
+			index = i; 	
 		}
 	}
-	return -1;
+
+	if(index >= 0) {
+		Account temp[200];
+		for(int i = 0; i < index; i++) {
+			temp[i] = accounts[i];
+		}
+
+		for(int i = index + 1; i < 200; i++){
+			temp[i] = accounts[i];
+		}
+
+		for(int i = 0; i < 200; i++) {
+			accounts[i] = temp[i];
+		}
+		total--;
+		return true;
+
+	}
+	else {
+		return false;
+	}
 }
 
 bool Bank::withdraw(int amount, std::string account, std::string p) {
 	for (int i = 0; i < 200; i++) {
                 if(accounts[i].getAccountNumber() == account) {
-			if (p == accounts[i].getPin() && accounts[i].transaction(amount) == true) {
+			if (p == accounts[i].getPin() && accounts[i].transaction(amount * -1) == true) {
 				accounts[i].transaction(amount * -1);
 				return true;
 			}
@@ -51,7 +71,7 @@ bool Bank::withdraw(int amount, std::string account, std::string p) {
 bool Bank::deposit(int amount, std::string account, std::string p) {
 	for (int i = 0; i < 200; i++) {
                 if(accounts[i].getAccountNumber() == account) {
-                        if (p == accounts[i].getPin() && accounts[i].transaction(amount) == true) {
+			if (p == accounts[i].getPin() && accounts[i].transaction(amount) == true) {
                                 accounts[i].transaction(amount);
                                 return true;
                         }

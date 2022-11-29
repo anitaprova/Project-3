@@ -34,8 +34,12 @@ int main() {
 	std::cout << "~~~~~~~~~~~~TASK B~~~~~~~~~~~~~~" << std::endl;	
 	Bank b;
 	std::cout << b.createAccount("Martin", "Charging", "1234") << std::endl;
-	std::cout << b.deposit(5, "21089013", "1234") << std::endl;
+	std::cout << b.deposit(500, "21089013", "1234") << std::endl;
 	std::cout << b.getAccountBalance("21089013", "1234") << std::endl;
+
+	std::cout << b.createAccount("Sky", "Flag", "1111") << std::endl;
+	std::cout << b.withdraw(500, "48582206", "1111") << std::endl;
+	std::cout << b.getAccountBalance("48582206", "1111") << std::endl;
 
 	return 0;
 }
