@@ -8,9 +8,10 @@ Created Account and Bank class with its respective functions.
 
 #include <iostream>
 #include <string>
+#include "Account.hpp"
 #include "Bank.hpp"
 
-/*Bank::Bank(){
+Bank::Bank(){
 	total = 0;
 }
 
@@ -26,18 +27,44 @@ std::string Bank::createAccount(std::string f, std::string l, std::string p) {
 }
 
 bool Bank::removeAccount(std::string account) {
+	int index = 0;
+	for (int i = 0; i < 200; i++) {
+		if(accounts[i].getAccountNumber() == account) {
+			index = i;	
+		}
+	}
 	return -1;
 }
 
 bool Bank::withdraw(int amount, std::string account, std::string p) {
-	return true;
+	for (int i = 0; i < 200; i++) {
+                if(accounts[i].getAccountNumber() == account) {
+			if (p == accounts[i].getPin() && accounts[i].transaction(amount) == true) {
+				accounts[i].transaction(amount * -1);
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 bool Bank::deposit(int amount, std::string account, std::string p) {
-	return true;
+	for (int i = 0; i < 200; i++) {
+                if(accounts[i].getAccountNumber() == account) {
+                        if (p == accounts[i].getPin() && accounts[i].transaction(amount) == true) {
+                                accounts[i].transaction(amount);
+                                return true;
+                        }
+                }
+        }
+	return false;
 }
 
 int Bank::getAccountBalance(std::string account, std::string p) {
-	return true;
+	for (int i = 0; i < 200; i++) {
+                if(accounts[i].getAccountNumber() == account && p == accounts[i].getPin()) {
+			return accounts[i].getBalance();
+		}
+	}
+	return -1;
 }
-*/
