@@ -18,6 +18,7 @@ Bank::Bank(){
 std::string Bank::createAccount(std::string f, std::string l, std::string p) {
 	if (total < 200) {
 		Account a = {f, l, p};
+		accounts[total] = a;
 		total++;
 		return a.getAccountNumber();
 	}
