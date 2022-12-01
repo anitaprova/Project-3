@@ -60,8 +60,10 @@ bool Bank::withdraw(int amount, std::string account, std::string p) {
 	for (int i = 0; i < 200; i++) {
                 if(accounts[i].getAccountNumber() == account) {
 			if (p == accounts[i].getPin()) {
-				accounts[i].transaction(amount * -1);
-				return true;
+				if (accounts[i].transaction(amount * -1) == true) {
+					return true;
+				}
+				else { return false; }
 			}
 		}
 	}
