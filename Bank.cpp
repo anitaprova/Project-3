@@ -34,7 +34,7 @@ std::string Bank::createAccount(std::string f, std::string l, std::string p) {
 }
 
 bool Bank::removeAccount(std::string account) {
-	int index;
+	int index = -1;
 	for (int i = 0; i < total; i++) {
 		if(accounts[i].getAccountNumber() == account) {
 			index = i; 	
