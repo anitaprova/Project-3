@@ -44,10 +44,14 @@ int main() {
 	std::cout << b.withdraw(500, "48582206", "1111") << std::endl;
 	std::cout << "Account Balance: " << b.getAccountBalance("48582206", "1111") << std::endl;
 	
+	b.createAccount("Mart", "Char", "1234"); 	
+	b.createAccount("Martini", "arging", "1234");
+	b.printAccounts();	
+	
 	std::cout << b.removeAccount("21089013") << std::endl;
 	std::cout << b.removeAccount("48582206") << std::endl;
-
-	std::cout << b.deposit(500, "21089013", "1234") << std::endl;
+	
+	b.printAccounts();
 
 	return 0;
 }

@@ -16,6 +16,7 @@ private:
 	int total;
 public:
 	Bank();
+	//void printAccounts(); 
 	std::string createAccount(std::string f, std::string l, std::string p);
 	bool removeAccount(std::string account);
 	bool withdraw(int amount, std::string account, std::string p);
