@@ -15,11 +15,11 @@ Bank::Bank(){
 	total = 0;
 }
 
-/*void Bank::printAccounts() {
+void Bank::printAccounts() {
 	for(int i = 0; i < total; i++) {
 		std::cout << i << ": " << accounts[i].getAccountNumber() << std::endl;
 	}
-}*/
+}
 
 std::string Bank::createAccount(std::string f, std::string l, std::string p) {
 	if (total < 200) {
@@ -35,7 +35,7 @@ std::string Bank::createAccount(std::string f, std::string l, std::string p) {
 
 bool Bank::removeAccount(std::string account) {
 	int index;
-	for (int i = 0; i < 200; i++) {
+	for (int i = 0; i < total; i++) {
 		if(accounts[i].getAccountNumber() == account) {
 			index = i; 	
 		}
@@ -47,11 +47,11 @@ bool Bank::removeAccount(std::string account) {
 			temp[i] = accounts[i];
 		}
 
-		for(int i = index + 1; i < 200; i++){
+		for(int i = index + 1; i < total; i++){
 			temp[i - 1] = accounts[i];
 		}
 
-		for(int i = 0; i < 200; i++) {
+		for(int i = 0; i < total; i++) {
 			accounts[i] = temp[i];
 		}
 		total--;
@@ -94,7 +94,7 @@ bool Bank::deposit(int amount, std::string account, std::string p) {
 
 int Bank::getAccountBalance(std::string account, std::string p) {
 	for (int i = 0; i < 200; i++) {
-                if(accounts[i].getAccountNumber() == account && p == accounts[i].getPin()) {
+        if(accounts[i].getAccountNumber() == account && p == accounts[i].getPin()) {
 			return accounts[i].getBalance();
 		}
 	}
