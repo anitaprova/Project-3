@@ -36,10 +36,17 @@ int main() {
 	std::cout << b.createAccount("Martin", "Charging", "1234") << std::endl;
 	std::cout << b.deposit(500, "21089013", "1234") << std::endl;
 	std::cout << b.getAccountBalance("21089013", "1234") << std::endl;
+	std::cout << b.withdraw(250, "21089013", "1234") << std::endl;
+        std::cout << b.getAccountBalance("21089013", "1234") << std::endl;
 
 	std::cout << b.createAccount("Sky", "Flag", "1111") << std::endl;
 	std::cout << b.withdraw(500, "48582206", "1111") << std::endl;
 	std::cout << b.getAccountBalance("48582206", "1111") << std::endl;
+	
+	std::cout << b.removeAccount("21089013") << std::endl;
+	std::cout << b.removeAccount("48582206") << std::endl;
+
+	std::cout << b.deposit(500, "21089013", "1234") << std::endl;
 
 	return 0;
 }
