@@ -50,7 +50,6 @@ bool Bank::removeAccount(std::string account) {
 		}
 		total--;
 		return true;
-
 	}
 	else {
 		return false;
@@ -60,7 +59,7 @@ bool Bank::removeAccount(std::string account) {
 bool Bank::withdraw(int amount, std::string account, std::string p) {
 	for (int i = 0; i < 200; i++) {
                 if(accounts[i].getAccountNumber() == account) {
-			if (p == accounts[i].getPin() && accounts[i].transaction(amount * -1) == true) {
+			if (p == accounts[i].getPin()) {
 				accounts[i].transaction(amount * -1);
 				return true;
 			}
@@ -72,7 +71,7 @@ bool Bank::withdraw(int amount, std::string account, std::string p) {
 bool Bank::deposit(int amount, std::string account, std::string p) {
 	for (int i = 0; i < 200; i++) {
                 if(accounts[i].getAccountNumber() == account) {
-			if (p == accounts[i].getPin() && accounts[i].transaction(amount) == true) {
+			if (p == accounts[i].getPin()) {
                                 accounts[i].transaction(amount);
                                 return true;
                         }
